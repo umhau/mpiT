@@ -31,19 +31,20 @@ for i = 0,size-1 do
 end
 
 opt = {}
+--[[
 opt.name = 'downpour'
 opt.lr = 1e-4
 opt.su = 1
---[[
+--]]
 opt.name = 'eamsgd'
-opt.lr = 1e-1
+--opt.lr = 1e-1
 opt.su = 100
 opt.mva = 0.9/6 -- this is \beta/p when p=6
 
 opt.lr = 1e-2
 opt.mom = 0.99
---]]
-opt.maxepoch = 10000
+
+opt.maxepoch = 10 -- don't need that many for testing.
 
 if math.fmod(rank,2)==0 then
    -- server
